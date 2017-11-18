@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>probando vue</title>
+</head>
+<body>
+  <!-- HACEMOS UN ELEMENTO -->
+    <div id="app">
+       <h1>{{ message }}</h1>
+       <!-- ojo, los objetos que esten relacionados a vue deberanir en estecontenedor ya que como nuestro moldecito -->
+       <input v-model= "message" >
+    </div>
+    <!-- asociamos nuestra data y vue model a un input -->
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.1/vue.min.js"></script>
+  <script type="text/javascript">
+  // almacenamos nuestra data eb un objeto
+    var data = {
+      message: 'que onda terriolas'
+    };
+
+    // hacemos una instanciade vue? , este sera nuestro vue model
+    new Vue({
+      el:'#app',
+      // aqui esta propiedad esta llamando al objeto llamado data coo arriba, sin embargo este se puede declarar dentro;
+      data: data
+    });
+  </script>
+</body>
+</html>
