@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ejemplo con button submit</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <form action="" v.on:submit.prevent="enviar">
+        <button type="submit">
+           ¡Envia algo!
+        </button>
+      </form> -->
+
+        <!-- tambien puede ser utlizando un atajo conel @ en lugar de v-on y el prevent -->
+      <button type="" @click="contandoNumeritos">
+         Cuenta hasta el infinito y más allá ---> {{ contador }}
+      </button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.1/vue.min.js"></script>
+    <script type="text/javascript">
+        // new Vue({
+        //   el: '#app',
+        //   methods: {
+        //     enviar: function() {
+        //       alert("hola!cómo ves esto de vue? padre, no?");
+        //     }
+        //   }
+        // });
+
+        // ejemplo de contador
+        new Vue({
+          el: '#app',
+          data: {
+            contador: 0
+          },
+          methods: {
+            contandoNumeritos: function (){
+              this.contador += 1;
+            }
+          }
+        })
+
+    </script>
+  </body>
+</html>
