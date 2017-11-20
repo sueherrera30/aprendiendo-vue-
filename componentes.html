@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ejemplo con button submit</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- podemos llamar a nuestro componente las veces que queramos y darles una identidad propia -->
+       <el-contador nombre="likes"></el-contador>
+        <el-contador nombre="dislikes"></el-contador>
+    </div>
+
+    <!-- este esun template,aqui,armamos la estructura basica que queremos tener pasa despues solo llamarla en nuestro contenedor de vue -->
+    <template id="miContador">
+      <h1>{{ nombre }}</h1>
+      <!-- a diferencia delejercicioanterior ponemos directamente la acción en el evento -->
+      <button @click=" contador += 1">{{ contador }}</button>
+    </template>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.1/vue.js"></script>
+    <script type="text/javascript">
+    // creamos nuestrocomponente global, es como un molde que podemos reutilizar.
+        Vue.component('el-contador', {
+          template: '#miContador',
+          props : ['nombre'],
+          // como esta data la usaremosen varios componentes, lo revolvemosen una función
+          data: function () {
+            return { contador: 0 };
+          }
+
+        });
+
+        new Vue({
+          el: '#app'
+        });
+
+    </script>
+  </body>
+</html>
