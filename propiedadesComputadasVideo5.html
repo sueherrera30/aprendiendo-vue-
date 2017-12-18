@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ejemplo con tex area</title>
+  </head>
+  <body>
+    <div id="app">
+            <h1> Hello my name is : {{fullName }}</h1>
+            <input type="text" v-model= "first" placeholder="first name">
+            <input type="text" v-model= "last" placeholder="last name" >
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.1/vue.min.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data: {
+                first : '',
+                last : ''
+            },
+            // lap primera opción es poder observsr los cambios, podemos observar con watch, por ejemplo:
+            // watch: ojo( en este ejemplo, se necesita poner en el data la propiedad de fullName ) {
+            //     first: function(first) {
+            //         this.fullName = first + ' ' + this.last;
+            //     },
+            //     last: function(last) {
+            //         this.fullName = this.first + ' ' + last;
+            //     }
+            // }
+            computed: {
+                 fullName:function() {
+                    return this.first + ' ' + this.last;
+                }
+            }
+        })
+    </script>
+  </body>
+</html>
